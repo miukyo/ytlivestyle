@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "DM Sans Variable", sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  width: 100%;
+  min-height: 100vh;
+}
