@@ -35,6 +35,7 @@ function CodeEditor() {
         setAutoSave(value);
       }
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const reset = () => {
     setStyles(defaultCSS);
@@ -105,7 +106,7 @@ function CodeEditor() {
         {formatSavingLoading ? (
           <div className="absolute pointer-events-none -bottom-5 left-0 w-full z-20 animate-fade animate-reverse animate-delay-300 animate-duration-200">
             <div className="w-full px-20 py-5 animate-fade-up animate-duration-150 animate-ease-out">
-              <div className="alert max-w-sm mx-auto scale-75 shadow-xl">
+              <div className="alert alert-success max-w-sm mx-auto scale-75 shadow-xl">
                 <IconCircleCheckFilled size={48} />
                 <div className="flex flex-col">
                   <span>Saved</span>
@@ -119,7 +120,7 @@ function CodeEditor() {
         {copyLoading ? (
           <div className="absolute pointer-events-none -bottom-5 left-0 w-full z-20 animate-fade animate-reverse animate-delay-300 animate-duration-200">
             <div className="w-full px-20 py-5 animate-fade-up animate-duration-150 animate-ease-out">
-              <div className="alert max-w-sm mx-auto scale-75 shadow-xl">
+              <div className="alert alert-info max-w-sm mx-auto scale-75 shadow-xl">
                 <IconInfoCircleFilled size={48} />
                 <div className="flex flex-col">
                   <span>Copied</span>

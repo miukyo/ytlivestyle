@@ -216,11 +216,13 @@
       }
 
       yt-live-chat-text-message-renderer[is-highlighted] #author-name[type="owner"] {
-        color: var(--yt-live-chat-message-highlight-text-color, rgba(0, 0, 0, 8.7));
+        color: var(--yt-live-chat-message-highlight-text-color, hsl(0, 0%, 6.7%));
       }
 
       yt-live-chat-text-message-renderer #author-name[type="owner"] {
-        color: var(--yt-live-chat-owner-color, hsl(40, 76%, 55%));
+        color: hsla(0, 0%, 6.7%);
+        padding: 2px 4px;
+        background-color: #ffd600;
       }
 
       yt-live-chat-text-message-renderer #author-name[type="moderator"] {
@@ -568,6 +570,7 @@
       }
 
       yt-live-chat-header-renderer {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
         height: 48px;
         padding: 8px;
         box-sizing: border-box;
@@ -603,6 +606,62 @@
         flex-direction: row;
         align-items: center;
       }
+
+      yt-live-chat-message-input-renderer {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        padding: 10px 24px;
+        position: static;
+        border-top: 1px solid rgba(0,0,0,0.1);
+  
+      }
+
+      yt-live-chat-message-input-renderer #input-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        border-radius: 18px;
+        padding: 0 0 0 12px;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      yt-live-chat-text-input-field-renderer {
+        display: flex;
+        flex: 1 1 auto;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      yt-live-chat-text-input-field-renderer #label {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow-x: hidden;
+        color: var(
+          --yt-live-chat-text-input-field-placeholder-color,
+          var(--yt-deprecated-luna-black-opacity-lighten-2)
+        );
+        /* position: absolute; */
+        line-height: 18px;
+        padding: 2px 0;
+      }
+
+      yt-live-chat-icon-toggle-button-renderer {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+      }
+
+      yt-live-chat-icon-toggle-button-renderer yt-icon-button {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding: 6px;
+      }
     </style>
   </head>
   <body>
@@ -618,7 +677,7 @@
                 viewBox="0 0 24 24"
                 width="24"
                 focusable="false"
-                style="pointer-events: none; display: block;">
+                style="pointer-events: none; display: block">
                 <path d="m18 9.28-6.35 6.35-6.37-6.35.72-.71 5.64 5.65 5.65-5.65z"></path></svg
             ></yt-dropdown-menu>
           </div>
@@ -699,9 +758,9 @@
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges"></span>
                 <span id="author-name" type="owner"
-                  >芥川 龍之介<span id="chip-badges"></span
+                  >Owner<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">堀川の大殿様のやうな方は</span
+              >&#8203;<span id="message">Lorem Ipsum dor amet.</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -731,9 +790,9 @@
                   </yt-live-chat-author-badge-renderer>
                 </span>
                 <span id="author-name" type="moderator"
-                  >森 鴎外<span id="chip-badges"></span
+                  >Moderator<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">石炭をば早や積み果てつ</span
+              >&#8203;<span id="message">consectetur adipiscing elit</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -757,9 +816,9 @@
                   </yt-live-chat-author-badge-renderer>
                 </span>
                 <span id="author-name" type="member"
-                  >夏目 漱石<span id="chip-badges"></span
+                  >Membership<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">吾輩は猫である。名前はまだ無い</span
+              >&#8203;<span id="message">Fusce bibendum orci magna.</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -777,9 +836,9 @@
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges"></span>
                 <span id="author-name"
-                  >太宰 治<span id="chip-badges"></span
+                  >Viewer<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">朝、食堂でスウプを一さじ、すっと吸ってお母さまが</span
+              >&#8203;<span id="message">Nulla et ultrices risus. Pellentesque eu nisl rutrum, pulvinar metus at, consequat ante.</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -815,7 +874,7 @@
                   <div id="header-content-primary-column">
                     <div id="single-line">
                       <yt-live-chat-author-chip disable-highlighting>
-                        <div id="author-name">Lorem</div>
+                        <div id="author-name">Donator</div>
                       </yt-live-chat-author-chip>
                       <div id="purchase-amount-column">
                         <div id="purchase-amount">$1,000</div>
@@ -858,7 +917,7 @@
                   <div id="header-content-primary-column">
                     <div id="single-line">
                       <yt-live-chat-author-chip disable-highlighting>
-                        <div id="author-name">福沢 諭吉</div>
+                        <div id="author-name">Donator</div>
                       </yt-live-chat-author-chip>
                       <div id="purchase-amount-column">
                         <div id="purchase-amount">$1,000</div>
@@ -869,7 +928,7 @@
                 </div>
               </div>
               <div id="content">
-                <div id="message">「天は人の上に人を造らず人の下に人を造らず」と言えり</div>
+                <div id="message">Curabitur eget accumsan odio. Quisque ornare ac dolor quis aliquam.</div>
               </div>
             </div>
           </yt-live-chat-paid-message-renderer>
@@ -893,9 +952,9 @@
                   </yt-live-chat-author-badge-renderer>
                 </span>
                 <span id="author-name" type="member"
-                  >太宰 治<span id="chip-badges"></span
+                  >Membership<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">「髪の毛？」</span
+              >&#8203;<span id="message">Hello ?</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -913,9 +972,9 @@
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges"></span>
                 <span id="author-name"
-                  >樋口 一葉<span id="chip-badges"></span
+                  >Viewer<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">廻れば大門の見返り柳いと長けれど</span
+              >&#8203;<span id="message">Sed pharetra, quam dapibus faucibus ultricies</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -933,41 +992,36 @@
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges"></span>
                 <span id="author-name"
-                  >宮沢 賢治<span id="chip-badges"></span
+                  >Viewer<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">小さな谷川の底を写した二枚の青い幻燈です</span
+              >&#8203;<span id="message">ante risus porttitor risus, at sodales mauris libero vel ipsum.</span
               ><yt-formatted-string id="deleted-state"
-                >[メッセージが撤回されました]</yt-formatted-string
+                >[message retracted]</yt-formatted-string
               >
             </div>
           </yt-live-chat-text-message-renderer>
-          <yt-live-chat-text-message-renderer author-type="member">
-            <yt-img-shadow class="no-transition" id="author-photo" loaded>
-              <img
-                alt=""
-                height="24"
-                id="img"
-                src="https://placehold.co/40x40.png?text=A"
-                width="24" />
-            </yt-img-shadow>
-            <div id="content">
-              <span id="timestamp">2:00 PM</span
-              ><yt-live-chat-author-chip highlights-enabled>
-                <span id="chat-badges">
-                  <yt-live-chat-author-badge-renderer type="member">
-                    <div id="image">
-                      <img alt="" height="24" id="img" src="./member-badge.png" width="24" />
-                    </div>
-                  </yt-live-chat-author-badge-renderer>
-                </span>
-                <span id="author-name" type="member"
-                  >太宰 治<span id="chip-badges"></span
-                ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message"
-                >スウプに何か、イヤなものでも入っていたのかしら、と思った</span
-              ><yt-formatted-string id="deleted-state"></yt-formatted-string>
+          <yt-live-chat-message-input-renderer>
+            <div id="input-container">
+              <yt-live-chat-text-input-field-renderer>
+                <label>Chat as a subscriber...</label>
+                <div id="input" contenteditable></div>
+              </yt-live-chat-text-input-field-renderer>
+              <yt-live-chat-icon-toggle-button-renderer>
+                <yt-icon-button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    enable-background="new 0 0 24 24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    focusable="false"
+                    style="pointer-events: none; display: block; width: 100%; height: 100%">
+                    <path
+                      d="M15.83 15c-.52 1.38-2.19 2-3.79 2-1.59 0-3.28-.62-3.85-2h7.64m.69-1H7.49c-.27 0-.49.22-.46.47C7.34 16.83 9.7 18 12.05 18c2.35 0 4.69-1.18 4.93-3.54.03-.25-.2-.46-.46-.46zM12 3c4.96 0 9 4.04 9 9s-4.04 9-9 9-9-4.04-9-9 4.04-9 9-9m0-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM6.94 9.73C7.19 9.25 7.72 9 8.5 9c.75 0 1.28.25 1.57.75.14.24.45.32.68.18.24-.14.32-.44.18-.68C10.6 8.68 9.91 8 8.5 8c-1.48 0-2.15.69-2.44 1.27-.13.25-.03.55.21.67.07.04.15.06.23.06.18 0 .36-.1.44-.27zm7 0c.25-.48.78-.73 1.56-.73.75 0 1.28.25 1.57.75.14.24.45.32.68.18.24-.14.32-.44.18-.68C17.6 8.68 16.91 8 15.5 8c-1.48 0-2.15.69-2.44 1.27-.13.25-.03.55.21.67.07.04.15.06.23.06.18 0 .36-.1.44-.27z"></path></svg
+                ></yt-icon-button>
+              </yt-live-chat-icon-toggle-button-renderer>
             </div>
-          </yt-live-chat-text-message-renderer>
+          </yt-live-chat-message-input-renderer>
         </yt-live-chat-item-list-renderer>
       </yt-live-chat-renderer>
     </yt-live-chat-app>
@@ -998,6 +1052,9 @@
       img,
       yt-live-chat-author-badge-renderer {
         pointer-events: none;
+      }
+      yt-dropdown-menu {
+        cursor: none;
       }
     </style>
     <script
