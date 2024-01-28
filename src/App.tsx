@@ -59,11 +59,11 @@ function App() {
           </div>
           <p className="text-sm text-center text-gray-8">
             Created by{" "}
-            <a target="_blank" href="https://twitter.com/miuky0" className="text-blue-500">
+            <a target="_blank" href="https://x.com/miuky0" className="text-blue-500">
               miukyo
             </a>
             <br />
-            Support me to make the website better!
+            Support me to make this website better!
           </p>
         </div>
       </div>
