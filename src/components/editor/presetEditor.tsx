@@ -147,10 +147,6 @@ function PresetEditor() {
           setModal={setOpenAddPresetModal}
         />
       </Modal>
-      {/* <select className="select select-solid block max-w-none">
-        <option>Default</option>
-        <option>Whimsical Blush</option>
-      </select> */}
       <Listbox
         value={selectedPreset}
         onChange={(e) => {
@@ -197,9 +193,9 @@ function PresetEditor() {
         {Object.entries(rootVariables).map(
           ([property, { value, type, unit, description, options }]) => (
             <div className="flex items-center justify-between relative" key={property}>
+              <div className="flex flex-col">
               <p>{property.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}</p>
-              <span className="block truncate text-xs opacity-50">{description}</span>
-
+              <span className="block truncate text-xs text-content3 whitespace-break-spaces mr-5">{description}</span></div>
               <div className="flex gap-2">
                 {type === "select" ? (
                   <Listbox
