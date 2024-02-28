@@ -85,7 +85,7 @@ export const ChatCSSProvider = ({ children }: { children?: React.ReactNode }) =>
     }, 500);
   };
 
-  const autoSaver = async (e: string) => {
+  const autoSaver = (e: string) => {
     if (autoSave) {
       setCSS(e);
       save(e);

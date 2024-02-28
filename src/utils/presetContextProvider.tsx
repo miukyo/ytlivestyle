@@ -20,6 +20,7 @@ export const PresetContext = createContext<PresetState>({
 });
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const defaultPresets: PresetState["presets"] = [
   {
     id: "00000000-0000-0000-0000-000000000000",
