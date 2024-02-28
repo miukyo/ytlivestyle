@@ -56,8 +56,10 @@ export const ChatCSSProvider = ({ children }: { children?: React.ReactNode }) =>
 
   useEffect(() => {
     localforage.getItem("CSS").then((e) => {
-      if (typeof e === "string") {
+      if (typeof e === "string" && e.length > 0) {
         setCSS(e);
+      } else {
+        setCSS(defaultPresets[0].css);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -73,7 +75,6 @@ export const ChatCSSProvider = ({ children }: { children?: React.ReactNode }) =>
       clearTimeout(delayDebounceFn);
     };
   };
-
 
   const saveButton = () => {
     setFormatSavingLoading(true);
@@ -93,7 +94,6 @@ export const ChatCSSProvider = ({ children }: { children?: React.ReactNode }) =>
       setCSS(e);
     }
   };
-
 
   const reset = () => {
     setCSS(defaultPresets[selectedPreset].css);
