@@ -88,6 +88,11 @@ function CodeEditor() {
           basicSetup={{ lintKeymap: true }}
           onChange={autoSaver}
         />
+        {/* <span
+          className="tooltip tooltip-left absolute z-50 bottom-5 right-5 after:opacity-50"
+          data-tooltip="Placeholder Guide">
+          <button className="btn btn-sm  bg-opacity-50 backdrop-blur">!</button>
+        </span> */}
       </div>
 
       <div className="flex justify-between items-center mt-3 mb-5">

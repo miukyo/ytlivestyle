@@ -128,7 +128,7 @@ yt-live-chat-item-list-renderer #item-scroller {
 yt-live-chat-membership-item-renderer #card,
 yt-live-chat-paid-message-renderer #card {
   margin-block: 5px;
-  box-shadow: none;
+  box-shadow: none !important;
   overflow: visible !important;
 }
 
