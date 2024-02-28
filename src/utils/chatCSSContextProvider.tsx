@@ -97,7 +97,7 @@ export const ChatCSSProvider = ({ children }: { children?: React.ReactNode }) =>
 
   const reset = () => {
     setCSS(defaultPresets[selectedPreset].css);
-    save(CSS)
+    save(defaultPresets[selectedPreset].css);
   };
 
   const setAutoSaveLocal = async () => {
