@@ -1,23 +1,23 @@
 import { useContext, useEffect, useRef } from "react";
-import { ChatStyleContext } from "../utils/chatStyleContextProvider";
+import { ChatCSSContext } from "@/utils/chatCSSContextProvider";
 
 export default function PreviewIframe() {
   const frameRef = useRef<HTMLIFrameElement>(null);
-  const { styles } = useContext(ChatStyleContext);
+  const { CSS } = useContext(ChatCSSContext);
 
   useEffect(() => {
     const win = frameRef.current && frameRef.current.contentWindow;
     if (!win) return;
-    const styleSheetURL = URL.createObjectURL(new Blob([styles], { type: "text/css" }));
+    const CSSheetURL = URL.createObjectURL(new Blob([CSS], { type: "text/css" }));
 
     const delayDebounceFn = setTimeout(() => {
-      win.postMessage({ url: styleSheetURL }, win.origin);
+      win.postMessage({ url: CSSheetURL }, win.origin);
     }, 500);
 
     return () => {
       clearTimeout(delayDebounceFn);
     };
-  }, [styles]);
+  }, [CSS]);
 
   return (
     <>

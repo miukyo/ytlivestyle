@@ -570,7 +570,7 @@
       }
 
       yt-live-chat-header-renderer {
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: 48px;
         padding: 8px;
         box-sizing: border-box;
@@ -613,8 +613,7 @@
         font-size: 14px;
         padding: 10px 24px;
         position: static;
-        border-top: 1px solid rgba(0,0,0,0.1);
-  
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       yt-live-chat-message-input-renderer #input-container {
@@ -757,7 +756,7 @@
               <span id="timestamp">2:00 PM</span
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges"></span>
-                <span id="author-name" type="owner"
+                <span id="author-name" type="owner" class="owner"
                   >Owner<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
               >&#8203;<span id="message">Lorem Ipsum dor amet.</span
@@ -789,14 +788,14 @@
                     </div>
                   </yt-live-chat-author-badge-renderer>
                 </span>
-                <span id="author-name" type="moderator"
+                <span id="author-name" type="moderator" class="moderator"
                   >Moderator<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
               >&#8203;<span id="message">consectetur adipiscing elit</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
-          <yt-live-chat-text-message-renderer author-type="member">
+          <yt-live-chat-text-message-renderer author-type="member" class="member">
             <yt-img-shadow class="no-transition" id="author-photo" loaded>
               <img
                 alt=""
@@ -809,13 +808,13 @@
               <span id="timestamp">2:00 PM</span
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges">
-                  <yt-live-chat-author-badge-renderer type="member">
+                  <yt-live-chat-author-badge-renderer type="member" class="member">
                     <div id="image">
                       <img alt="" height="24" id="img" src="./member-badge.png" width="24" />
                     </div>
                   </yt-live-chat-author-badge-renderer>
                 </span>
-                <span id="author-name" type="member"
+                <span id="author-name" type="member" class="member"
                   >Membership<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
               >&#8203;<span id="message">Fusce bibendum orci magna.</span
@@ -838,7 +837,9 @@
                 <span id="author-name"
                   >Viewer<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">Nulla et ultrices risus. Pellentesque eu nisl rutrum, pulvinar metus at, consequat ante.</span
+              >&#8203;<span id="message"
+                >Nulla et ultrices risus. Pellentesque eu nisl rutrum, pulvinar metus at, consequat
+                ante.</span
               ><yt-formatted-string id="deleted-state"></yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
@@ -928,11 +929,13 @@
                 </div>
               </div>
               <div id="content">
-                <div id="message">Curabitur eget accumsan odio. Quisque ornare ac dolor quis aliquam.</div>
+                <div id="message">
+                  Curabitur eget accumsan odio. Quisque ornare ac dolor quis aliquam.
+                </div>
               </div>
             </div>
           </yt-live-chat-paid-message-renderer>
-          <yt-live-chat-text-message-renderer author-type="member">
+          <yt-live-chat-text-message-renderer author-type="member" class="member">
             <yt-img-shadow class="no-transition" id="author-photo" loaded>
               <img
                 alt=""
@@ -945,13 +948,13 @@
               <span id="timestamp">2:00 PM</span
               ><yt-live-chat-author-chip highlights-enabled>
                 <span id="chat-badges">
-                  <yt-live-chat-author-badge-renderer type="member">
+                  <yt-live-chat-author-badge-renderer type="member" class="member">
                     <div id="image">
                       <img alt="" height="24" id="img" src="./member-badge.png" width="24" />
                     </div>
                   </yt-live-chat-author-badge-renderer>
                 </span>
-                <span id="author-name" type="member"
+                <span id="author-name" type="member" class="member"
                   >Membership<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
               >&#8203;<span id="message">Hello ?</span
@@ -994,10 +997,9 @@
                 <span id="author-name"
                   >Viewer<span id="chip-badges"></span
                 ></span> </yt-live-chat-author-chip
-              >&#8203;<span id="message">ante risus porttitor risus, at sodales mauris libero vel ipsum.</span
-              ><yt-formatted-string id="deleted-state"
-                >[message retracted]</yt-formatted-string
-              >
+              >&#8203;<span id="message"
+                >ante risus porttitor risus, at sodales mauris libero vel ipsum.</span
+              ><yt-formatted-string id="deleted-state">[message retracted]</yt-formatted-string>
             </div>
           </yt-live-chat-text-message-renderer>
           <yt-live-chat-message-input-renderer>

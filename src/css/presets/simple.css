@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --owner-background-color: #f87171;
+  /*color*/
+  --moderator-background-color: #60a5fa;
+  /*color*/
+  --membership-background-color: #10b981;
+  /*color*/
+  --normal-background-color: #f8f4ec;
+  /*color*/
+  --owner-name-color: #ffffff;
+  /*color*/
+  --moderator-name-color: #ffffff;
+  /*color*/
+  --membership-name-color: #ffffff;
+  /*color*/
+  --normal-name-color: #000000;
+  /*color*/
+  --message-text-color: #de3484;
+  /*color*/
+  --message-background-color: #f8f4ec;
+  /*color*/
+  --donate-text: "Just donated";
+  /*text*/
+}
+
+body {
+  background-color: transparent !important;
+  font-family: "Rubik", sans-serif;
+}
+
+yt-live-chat-renderer {
+  background-color: transparent;
+}
+
+yt-live-chat-header-renderer,
+yt-live-chat-ticker-renderer,
+yt-live-chat-message-input-renderer,
+yt-reaction-control-panel-overlay-view-model,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-banner-manager {
+  display: none !important;
+}
+
+yt-live-chat-text-message-renderer {
+  background-color: transparent !important;
+}
+
+yt-live-chat-text-message-renderer * {
+  font-size: 18px !important;
+  line-height: normal !important;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+  width: fit-content;
+  background-color: var(--normal-background-color);
+  padding-inline: 15px !important;
+  border-radius: 10px;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip:has(#image) {
+  padding-inline: 15px 12px !important;
+}
+
+yt-live-chat-text-message-renderer #author-name {
+  color: var(--normal-name-color) !important;
+  font-size: 12px !important;
+  font-weight: bold;
+  line-height: 2 !important;
+}
+
+yt-live-chat-text-message-renderer #content {
+  display: flex;
+  flex-direction: column;
+  line-height: 0 !important;
+  gap: 3px;
+}
+
+yt-live-chat-text-message-renderer #message {
+  background-color: var(--message-background-color);
+  color: var(--message-text-color) !important;
+  font-weight: 500;
+  font-size: 15px !important;
+  width: fit-content;
+  padding-inline: 20px;
+  padding-block: 10px;
+  border-radius: 10px;
+}
+
+yt-live-chat-text-message-renderer yt-img-shadow:has(img) {
+  scale: 1.4;
+  border-radius: 5px !important;
+  margin-top: 20px;
+  translate: 4px;
+  rotate: 10deg;
+  border: 2px solid #fff;
+}
+
+yt-live-chat-text-message-renderer[is-deleted] {
+  display: none !important;
+}
+
+
+yt-live-chat-text-message-renderer #author-name.owner {
+  color: var(--owner-name-color) !important;
+  padding: 0;
+  background: transparent;
+}
+
+yt-live-chat-text-message-renderer #author-name.moderator {
+  color: var(--moderator-name-color) !important;
+}
+
+yt-live-chat-text-message-renderer #author-name.member {
+  color: var(--membership-name-color) !important;
+}
+
+yt-live-chat-text-message-renderer #chat-badges {
+  scale: 0.7;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip:has(#author-name.owner) {
+  background-color: var(--owner-background-color) !important;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip:has(#author-name.moderator) {
+  background-color: var(--moderator-background-color) !important;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip:has(#author-name.member) {
+  background-color: var(--membership-background-color) !important;
+}
+
+yt-live-chat-item-list-renderer #items,
+yt-live-chat-item-list-renderer #item-scroller {
+  overflow: hidden !important;
+}
+
+yt-live-chat-membership-item-renderer #card,
+yt-live-chat-paid-message-renderer #card {
+  margin-block: 5px;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+yt-live-chat-membership-item-renderer #header,
+yt-live-chat-paid-message-renderer #header {
+  padding: 12px 30px !important;
+  position: relative;
+  border-radius: 10px !important;
+}
+
+yt-live-chat-membership-item-renderer #header-subtext {
+  font-size: 12px;
+  margin: 0;
+}
+
+yt-live-chat-membership-item-renderer #author-photo {
+  position: absolute;
+  scale: 1.1;
+  right: 20px;
+  border-radius: 10px !important;
+  border: 2px solid #fff;
+  rotate: 10deg;
+  margin-top: -3%;
+}
+
+yt-live-chat-paid-message-renderer #card,
+yt-live-chat-membership-item-renderer #card {
+  background-color: transparent !important;
+}
+
+yt-live-chat-paid-message-renderer #header{
+  background-color: var(--yt-live-chat-paid-message-background-color) !important;
+}
+
+yt-live-chat-paid-message-renderer:has(#message) #header,
+yt-live-chat-membership-item-renderer:has(#message) #header {
+  padding-bottom: 30px !important;
+}
+
+yt-live-chat-paid-message-renderer #content,
+yt-live-chat-membership-item-renderer #content {
+  position: relative;
+  background-color: #fff !important;
+  width: fit-content;
+  padding: 0 !important;
+  margin-top: -20px;
+  margin-inline: 15px;
+  border-radius: 12px;
+}
+
+yt-live-chat-paid-message-renderer #content #message,
+yt-live-chat-membership-item-renderer #content #message {
+  color: var(--message-text-color) !important;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+yt-live-chat-paid-message-renderer #author-photo {
+  position: absolute;
+  scale: 1.4;
+  right: 25px;
+  border-radius: 10px !important;
+  border: 2px solid #fff;
+  rotate: 10deg;
+  margin-top: -3%;
+}
+
+yt-live-chat-paid-message-renderer #header-content #single-line {
+  flex-direction: column;
+}
+
+yt-live-chat-paid-message-renderer #author-name {
+  color: #fff !important;
+}
+
+yt-live-chat-paid-message-renderer #header-content #purchase-amount-column {
+  padding: 0;
+  display: flex;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+yt-live-chat-paid-message-renderer #header-content #single-line #purchase-amount-column::before {
+  content: ''var(--donate-text)'\00a0';
+}
