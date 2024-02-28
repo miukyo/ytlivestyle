@@ -80,7 +80,7 @@ function PresetEditor() {
           value = val?.[0] || value;
         }
 
-        if (type.match(/\b(?:text|number|checkbox|color|select)\b/)) {
+        if (type.match(/\b(?:text|number|color|select)\b/)) {
           variables[variableName] = { value, unit, type, description, options };
         }
       }
