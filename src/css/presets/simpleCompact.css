@@ -36,7 +36,7 @@ yt-live-chat-renderer {
 }
 
 yt-live-chat-header-renderer,
-/* yt-live-chat-ticker-renderer, */
+yt-live-chat-ticker-renderer,
 yt-live-chat-message-input-renderer,
 yt-reaction-control-panel-overlay-view-model,
 yt-live-chat-viewer-engagement-message-renderer,
