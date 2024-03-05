@@ -60,6 +60,13 @@ yt-live-chat-text-message-renderer yt-live-chat-author-chip {
   position: relative;
 }
 
+yt-live-chat-text-message-renderer #author-photo {
+  border-radius: 6px !important;
+  border: 2px solid #fff;
+  margin-top: 3%;
+  transform: rotate(10deg) scale(1.4);
+}
+
 yt-live-chat-text-message-renderer #author-name {
   --padding: 15px 15px;
   overflow: hidden;
